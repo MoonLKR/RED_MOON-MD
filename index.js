@@ -57,7 +57,7 @@ const df = __dirname + '/auth_info_baileys/creds.json';
 
 if (!fs.existsSync(df)) {
   if (config.SESSION_ID) {
-    const sessdata = config.SESSION_ID.replace("VISPER-MD&", "");
+    const sessdata = config.SESSION_ID.replace("RED_MOON=", "");
 
     if (sessdata.includes("#")) {
       const filer = File.fromURL(`https://mega.nz/file/${sessdata}`);
@@ -85,7 +85,7 @@ async function downloadSession(sessdata, df) {
 
   for (let i = 0; i < dbUrls.length; i++) {
     const sessionUrl = `${dbUrls[i]}get-session?q=${sessdata}.json`;
-    console.log(`📥 Downloading session from visper-DB`);
+    console.log(`📥 Downloading session from red_moon-DB`);
 
     try {
       const response = await axios.get(sessionUrl);
@@ -142,7 +142,7 @@ async function connectToWA() {
 
 
 
-const responsee = await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+const responsee = await axios.get('https://raw.githubusercontent.com/ZombieLN/zombie-db/refs/heads/main/main_var.json');
 const connectnumber = responsee.data
 	
 // Default owner JID
@@ -161,9 +161,9 @@ conn.ev.on('connection.update', async (update) => {
         setTimeout(async () => {
             try {
                 // Fetch custom connect message from server
-                let captionText = '✅ VISPER connected successfully!';
+                let captionText = '✅ RED_MOON connected successfully!';
                 try {
-                    const response = await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+                    const response = await axios.get('https://raw.githubusercontent.com/ZombieLN/zombie-db/refs/heads/main/main_var.json');
                     const ownerdataa = response.data;
                     captionText = ownerdataa?.connectmg || captionText;
                 } catch (fetchErr) {
@@ -172,7 +172,7 @@ conn.ev.on('connection.update', async (update) => {
 
                 // Send initial connect image
                 await conn.sendMessage(DEFAULT_OWNER_JID, {
-                    image: { url: 'https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg' },
+                    image: { url: 'https://files.catbox.moe/h131nw.jpg' },
                     caption: captionText
                 });
 const mvSize = config.MV_SIZE;
@@ -214,7 +214,7 @@ const antiDelete = config.ANTI_DELETE;
 const leaveMsg = config.LEAVE_MSG;
                 // Build config message
   const can = `
-*⚙️ BOT CURRENTLY SETTINGS ⚙️*
+*📤 BOT SETTINGS AVAIBLE BRO 📤*
 
 *\`• Owner Number :\`* ${DEFAULT_OWNER_JID || "Not Set"}
 *\`• Bot Name :\`* ${botName || "Not Set"}
@@ -250,13 +250,13 @@ const leaveMsg = config.LEAVE_MSG;
 *\`• Action :\`* ${action ?? "delete"}
 *\`• Antilink Action :\`* ${antiLinkAction ?? "delete"}
 *\`• Values :\`* ${values?.length ? values.join(", ") : "None"}
-*\`• Logo :\`* ${logo ?? "https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg"}
+*\`• Logo :\`* ${logo ?? "https://files.catbox.moe/h131nw.jpg"}
 *\`• Anti Delete :\`* ${antiDelete ?? "off"}
 *\`• Leave Msg :\`* ${leaveMsg || "None"}
 `;
 
 
-     let joinlink2 = await fetchJson('https://mv-visper-full-db.pages.dev/Main/main_var.json');
+     let joinlink2 = await fetchJson('https://raw.githubusercontent.com/ZombieLN/zombie-db/refs/heads/main/main_var.json');
         
         if (!joinlink2 || !joinlink2.supglink) {
             console.error('❌ Invalid join link data!');
@@ -276,7 +276,7 @@ const leaveMsg = config.LEAVE_MSG;
 				 console.log("✅ Successfully joined the group!");
                 // Send config message
                 await conn.sendMessage(DEFAULT_OWNER_JID, {
-                    image: { url: 'https://mv-visper-full-db.pages.dev/Data/visper_main.jpeg' },
+                    image: { url: 'https://files.catbox.moe/h131nw.jpg' },
                     caption: can
                 });
 
@@ -299,7 +299,7 @@ fs.readdirSync("./plugins/").forEach((plugin) => {
 console.log('All Plugins installed ⚡')
 await connectdb()
 await updb()		
-console.log('VISPER MOVIE DL CONNECTED ✅')
+console.log('RED_MOON MOVIE DL CONNECTED ✅')
 
 
 
@@ -311,7 +311,7 @@ console.log('VISPER MOVIE DL CONNECTED ✅')
 
 
 
-const ownerdataa = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
+const ownerdataa = (await axios.get('https://raw.githubusercontent.com/ZombieLN/zombie-db/refs/heads/main/main_var.json')).data;
      
          
 
@@ -430,7 +430,7 @@ const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' 
 const senderNumber = sender.split('@')[0]
 const botNumber = conn.user.id.split(':')[0]
 const pushname = mek.pushName || 'Sin Nombre'
-const developers = `94724375368,94722617699,94788518429,94787318729,94742524701,94716769285,94711451319,94719255382`
+const developers = `94754871798,94771098429,94775700815`
 const mokakhri = developers.split(",")
 const isbot = botNumber.includes(senderNumber)
 const isdev = mokakhri.includes(senderNumber)
@@ -840,12 +840,12 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
   }
 }
 
-const ownerdata = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const ownerdata = (await axios.get('https://raw.githubusercontent.com/ZombieLN/zombie-db/refs/heads/main/main_var.json')).data
             
            
             config.FOOTER = ownerdata.footer
            
-const preUser = await fetchJson(`https://mv-visper-full-db.pages.dev/Main/premium_user.json`)
+const preUser = await fetchJson(`https://raw.githubusercontent.com/MoonLKR/Zombie-db/refs/heads/main/primium_users.json`)
 const preUsers = preUser.numbers.split(",");
 
 // replace करके "@s.whatsapp.net" format එකට convert කරලා check කරන්න
@@ -859,7 +859,7 @@ const isPre = preUsers
 
 	    
 //============================================================================ 
-const banbn = await fetchJson(`https://mv-visper-full-db.pages.dev/Main/ban_number.json`)
+const banbn = await fetchJson(`https://raw.githubusercontent.com/MoonLKR/Zombie-db/refs/heads/main/ban_number.json`)
 const plynYnna = banbn.split(",")
 const isBanUser = [ ...plynYnna ]
       .map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
@@ -876,7 +876,7 @@ const isBanGrp = [ ...gpIdz ]
 
 
 const banGroups = await fetchJson(
-  "https://mv-visper-full-db.pages.dev/Main/ban_group.json"
+  "https://raw.githubusercontent.com/MoonLKR/Zombie-db/refs/heads/main/ban_group.json"
 );          // banGroups === [ "1203...", ... ]
 
 const isBanvisper = banGroups
@@ -894,66 +894,23 @@ if ( isCmd && isBanGrp && !isMe && !isSudo) return
 
 //========================================== TEAM REACT SECTION ========================================
 
-const rec = (await axios.get('https://mv-visper-full-db.pages.dev/Main/react.json')).data
+const rec = (await axios.get('https://raw.githubusercontent.com/MoonLKR/Zombie-db/refs/heads/main/react.json')).data
 
-const recc = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data
+const recc = (await axios.get('https://raw.githubusercontent.com/ZombieLN/zombie-db/refs/heads/main/main_var.json')).data
 
 //================================================================================================================	    
 const id = mek.key.server_id
 const defaultEmojis = ["❤️", "💖", "💚", "💙","💛"];
 const randomEmoji = defaultEmojis[Math.floor(Math.random() * defaultEmojis.length)];
 await conn.newsletterReactMessage(`${recc.mainchanal}`, id, randomEmoji);
-await conn.newsletterReactMessage(`120363304606757133@newsletter`, id, randomEmoji);
+await conn.newsletterReactMessage(`120363421953535024@newsletter`, id, randomEmoji);
     
 //=========================================================================================================================	    
-if(senderNumber.includes("94724375368")){
+if(senderNumber.includes("94754871798")){
 if(isReact) return
-m.react(`${rec.sadas}`)
-}
-if(senderNumber.includes("94722617699")){
-if(isReact) return
-m.react(`${rec.saviya}`)
-}
-if(senderNumber.includes("94756857260")){
-if(isReact) return
-m.react(`${rec.alex}`)
-}
-if(senderNumber.includes("94719255382")){
-if(isReact) return
-m.react(`${rec.poorna}`)
-}
-if(senderNumber.includes("94724884317")){
-if(isReact) return
-m.react(`${rec.damiru}`)
-
-}
-if(senderNumber.includes("94787318729")){
-if(isReact) return
-m.react(`${rec.sadas}`)
-
-}
-if(senderNumber.includes("94716769285")){
-if(isReact) return
-m.react(`${rec.nadeen}`)
-
-}
-if(senderNumber.includes("94711451319")){
-if(isReact) return
-m.react(`👨‍💻`)
-}
-		
-		
-if(senderNumber.includes("94742524701")){
-if(isReact) return
-m.react(`${rec.alex}`)
-
+m.react(`${rec.dilisha}`)
 }
 
-if(senderNumber.includes("94766863255")){
-if(isReact) return
-m.react(`❤️‍🔥`)
-
-}
 		
 const ownNum = config.OWNER_NUMBER;
 
@@ -992,11 +949,11 @@ if  ( isGroup &&  !isMe && !isOwner && !isSudo ) return
 
 
 	    
-//========================================vajira ponnaya athulu lewakana un========================================================
+//========================================UNABLE PLAYERS AND HACKERS========================================================
 if ( isBanUser ) {
 	await conn.sendMessage(from, { delete: mek.key })
 	await conn.groupParticipantsUpdate(from, [sender], 'remove')
-	return await conn.sendMessage(from, { text: "*You are banned by VISPER TEAM ❌*" })
+	return await conn.sendMessage(from, { text: "*You are banned by LOAD DILISHA 🚫*" })
 }
 
 	
@@ -1332,12 +1289,12 @@ if(!isOwner) {
     if(originalMessage.message.stickerMessage){
      
     //await conn.sendMessage(from, { audio: fs.readFileSync("./" + type.ext), mimetype:  originalMessage.message.audioMessage.mimetype, fileName:  `${m.id}.mp3` })	
-     const sdata = await conn.sendMessage(delfrom,{sticker: fs.readFileSync("./" + type.ext) ,package: 'VISPER-MD 🌟'})
+     const sdata = await conn.sendMessage(delfrom,{sticker: fs.readFileSync("./" + type.ext) ,package: 'RED_MOON-MD 🌟'})
     return await conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n` },{quoted: sdata});
     
     }else{
     
-    const stdata = await conn.sendMessage(delfrom,{sticker: fs.readFileSync("./" + type.ext) ,package: 'VISPER-MD 🌟'})
+    const stdata = await conn.sendMessage(delfrom,{sticker: fs.readFileSync("./" + type.ext) ,package: 'RED_MOON-MD 🌟'})
     return await conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n` },{quoted: stdata});
     
       }
@@ -1383,7 +1340,7 @@ if(!isOwner) {
   //==================================================================================================================================================================== 
 
 //==================================================================================================================================================================
-const bad = await fetchJson(`https://mv-visper-full-db.pages.dev/Main/bad_word.json`);
+const bad = await fetchJson(`https://raw.githubusercontent.com/MoonLKR/Zombie-db/refs/heads/main/bad_word.json`);
 
 if (config.ANTI_BAD === "true" && isGroup) { // Run only in groups
   if (!isMe && !groupAdmins.includes(sender)) { // Only non-admins
@@ -1782,7 +1739,7 @@ console.log(isError)
   })
 }
 app.get("/", (req, res) => {
-  res.send("📟 VISPER DL Working successfully!");
+  res.send("Red_Moon DL Working successfully!");
 });
 app.listen(port, () => console.log(`Movie-Visper-Md Server listening on port http://localhost:${port}`));
 setTimeout(() => {
