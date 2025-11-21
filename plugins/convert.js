@@ -166,7 +166,7 @@ try{
       isQuotedImage ? await m.quoted.download(nameJpg) : await m.download(nameJpg)
     let sticker = new Sticker(nameJpg + '.jpg', {
       pack: pushname, // The pack name
-      author: '©VISPER-MD', // The author name
+      author: '©RED_MOON-MD', // The author name
       type: q.includes("--crop" || '-c') ? StickerTypes.CROPPED : StickerTypes.FULL,
       categories: ["🤩", "🎉"], // The sticker category
       id: "12345", // The sticker id
@@ -230,7 +230,7 @@ try{
       },
     });
 await pipeline(rbg, fs.createWriteStream(namePng + ".png"));
-let dat = `*🌆 VISPER-MD BACKGROUND REMOVER 🌆*
+let dat = `*🌆 RED_MOON-MD BACKGROUND REMOVER 🌆*
 `
 const buttons = [
 {buttonId: prefix + 'rbgi ' + namePng + ".png", buttonText: {displayText: 'IMAGE'}, type: 1},
@@ -279,7 +279,7 @@ try{
 await conn.sendMessage(from, { react: { text: '📥', key: mek.key }})
 let sticker = new Sticker(q, {
   pack: pushname, // The pack name
-  author: 'ɴᴀᴅᴇᴇɴ ᴘᴏᴏʀɴᴀ•', // The author name
+  author: 'LOAD DILISHA', // The author name
   type: q.includes("--crop" || '-c') ? StickerTypes.CROPPED : StickerTypes.FULL,
   categories: ["🤩", "🎉"], // The sticker category
   id: "12345", // The sticker id
@@ -382,7 +382,7 @@ cmd(
 
       // Convert the sticker buffer to an image (using Sticker class)
       const sticker = new Sticker(stickerBuffer, {
-        pack: "@VISPER-MD",
+        pack: "@RED_MOON-MD",
         author: "",
         type: "FULL", // This may not be needed, but ensures we're using the full sticker format
         quality: 100, // Quality of the output image (0-100)
@@ -650,7 +650,7 @@ async (conn, mek, m, { from, args, reply }) => {
         const keywords = packageData.keywords ? packageData.keywords.join(", ") : "No keywords provided";
         // Send the package details as a reply (without image)
         let replyText = `
-*\`💃 VISPER NPM SEARCH 💃\`*
+*\`📁 RED_MOON NPM SEARCH 📁\`*
 
 *┌──────────────────*
 *├ 🦑 Npm name :* ${packageName}
@@ -699,7 +699,7 @@ async (conn, mek, m, { from, reply, q }) => {
 
 cmd({
     pattern: "vv",
-    react: "🥱",
+    react: "📎",
     alias: ["retrive", "viewonce"],
     desc: "Fetch and resend a ViewOnce message content (image/video/voice).",
     category: "owner",
